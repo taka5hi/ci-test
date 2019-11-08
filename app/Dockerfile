@@ -3,9 +3,9 @@ From python:3.6-stretch
 USER root
 WORKDIR /usr/src/app
 
-COPY requirement.txt .
+COPY requirements.txt .
 
-pip install -r requirement.txt
+RUN pip install -r requirements.txt
 
 COPY . .
 
