@@ -11,3 +11,12 @@ before_install:
 script:
   # execute test
   - docker run testimage pytest
+
+addons:
+  artifacts:
+    s3_region: "ap-northeast-1"
+    paths:
+      - ./app
+    debug: true
+    target-paths: $TRAVIS_REPO_SLUG/$TRAVIS_BRANCH
+    bucket: "travis-ci-artifacts-20191112"
